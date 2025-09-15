@@ -91,8 +91,8 @@ Deployed a production-ready API using Flask:
 ## 📁 Dataset
 
 - Source: [Kaggle - E-commerce Behavior Data from a Cosmetics Store](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store)
-- Size: 4M+ event logs across several months  
-- Sampled one month (~300K rows) for modeling
+- Size: 20M+ event logs across several months  
+- Sampled one month (~4M rows) for modeling
 
 ---
 ## 📄 License
