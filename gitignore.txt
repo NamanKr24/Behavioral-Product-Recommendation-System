@@ -1,0 +1,9 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# in .gitignore
+*.pkl
