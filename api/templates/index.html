@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommendation System</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 2em; 
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: auto; 
+            background: #ffffff; /* White background for the card */
+            padding: 25px 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+            color: #333; /* Dark text for content inside the card */
+        }
+        h1, h2 { 
+            color: #1a1a1a;
+            border-bottom: 2px solid #4CAF50; /* Green accent line */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type=text] { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0 20px 0; 
+            box-sizing: border-box; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        input[type=submit] { 
+            width: 100%;
+            background-color: #4CAF50; /* Green button */
+            color: white; 
+            padding: 14px 20px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .results, .examples { 
+            margin-top: 30px; 
+        }
+        li { 
+            background: #f4f4f4; 
+            margin: 8px 0; 
+            padding: 12px; 
+            border-radius: 4px; 
+            list-style-type: none; /* Remove bullet points */
+        }
+        .examples p { 
+            color: #555; 
+            font-size: 0.9em; 
+        }
+        .examples ul {
+            padding-left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cosmetics Recommender</h1>
+        <form action="/" method="post">
+            <label for="user_id">Enter User ID:</label>
+            <input type="text" id="user_id" name="user_id" placeholder="e.g., 512476935">
+            <input type="submit" value="Get Recommendations">
+        </form>
+
+        <div class="examples">
+            <p>Don't have a User ID? Try one of these:</p>
+            <ul>
+                <li>512476935</li>
+                <li>554949536</li>
+                <li>524616892</li>
+            </ul>
+        </div>
+
+        {% if recommendations %}
+        <div class="results">
+            <h2>Recommendations for User ID: {{ user_id }}</h2>
+            <ul>
+                {% for rec_id in recommendations %}
+                <li>{{ rec_id }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
