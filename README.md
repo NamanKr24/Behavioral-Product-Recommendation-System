@@ -52,6 +52,8 @@ Without explicit ratings or reviews, it's difficult to understand what users wan
 - **Winner:** SVD model (best Precision@K, Recall@K)
 - **Hyperparameter Tuning:** Used `GridSearchCV` for optimized recall and RMSE
 
+  ![model_comparison](images/model_performances.png)
+
 ---
 
 ## ⚙️ Flask API & Deployment
@@ -63,6 +65,8 @@ Deployed a production-ready API using Flask:
 - **Optimization:**
   - Trained model saved via `pickle`
   - API loads pre-trained objects at startup for faster performance
+
+    ![app_preview](images/api_outlook.png)
 
 ---
 
